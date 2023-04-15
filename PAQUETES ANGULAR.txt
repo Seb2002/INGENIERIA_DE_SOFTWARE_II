@@ -1,0 +1,64 @@
+powershell -ExecutionPolicy Bypass -Command "ng add @angular/material@15.2.7"
+npm install sweetalert2@11.6.16
+npm install moment@2.29.4 --save
+npm i @angular/material-moment-adapter@15.2.7
+npm install chart.js@3.9.1
+npm i xlsx@0.18.5
+
+INTERFACES
+powershell -ExecutionPolicy Bypass -Command "ng generate interface Interfaces/ResponseApi"
+powershell -ExecutionPolicy Bypass -Command "ng generate interface Interfaces/Login"
+powershell -ExecutionPolicy Bypass -Command "ng generate interface Interfaces/Usuario"
+powershell -ExecutionPolicy Bypass -Command "ng generate interface Interfaces/Sesion"
+powershell -ExecutionPolicy Bypass -Command "ng generate interface Interfaces/Rol"
+powershell -ExecutionPolicy Bypass -Command "ng generate interface Interfaces/Menu"
+powershell -ExecutionPolicy Bypass -Command "ng generate interface Interfaces/Categoria"
+powershell -ExecutionPolicy Bypass -Command "ng generate interface Interfaces/Marca"
+powershell -ExecutionPolicy Bypass -Command "ng generate interface Interfaces/Producto"
+powershell -ExecutionPolicy Bypass -Command "ng generate interface Interfaces/DetalleVenta"
+powershell -ExecutionPolicy Bypass -Command "ng generate interface Interfaces/Venta"
+powershell -ExecutionPolicy Bypass -Command "ng generate interface Interfaces/Reporte"
+
+SERVICES
+powershell -ExecutionPolicy Bypass -Command "ng generate service Services/Usuario"
+powershell -ExecutionPolicy Bypass -Command "ng generate service Services/Rol"
+powershell -ExecutionPolicy Bypass -Command "ng generate service Services/Menu"
+powershell -ExecutionPolicy Bypass -Command "ng generate service Services/Categoria"
+powershell -ExecutionPolicy Bypass -Command "ng generate service Services/Producto"
+powershell -ExecutionPolicy Bypass -Command "ng generate service Services/Venta"
+powershell -ExecutionPolicy Bypass -Command "ng generate service Services/DashBoard"
+
+
+MODULE
+powershell -ExecutionPolicy Bypass -Command "ng generate module Reutilizable/Shared"
+
+
+COMPONENTS
+powershell -ExecutionPolicy Bypass -Command "ng generate component Components/Login"
+powershell -ExecutionPolicy Bypass -Command "ng generate component Components/Layout"
+
+powershell -ExecutionPolicy Bypass -Command "ng g c Components/Layout/Pages/DashBoard"
+powershell -ExecutionPolicy Bypass -Command "ng g c Components/Layout/Pages/Usuario"
+powershell -ExecutionPolicy Bypass -Command "ng g c Components/Layout/Pages/Producto"
+powershell -ExecutionPolicy Bypass -Command "ng g c Components/Layout/Pages/Venta"
+powershell -ExecutionPolicy Bypass -Command "ng g c Components/Layout/Pages/HistorialVenta"
+powershell -ExecutionPolicy Bypass -Command "ng g c Components/Layout/Pages/Reporte"
+
+SERVER
+
+powershell -ExecutionPolicy Bypass -Command "ng serve --open"
+
+powershell -ExecutionPolicy Bypass -Command "ng g s Reutilizable/Utilidad"
+
+
+
+
+
+
+
+
+
+
+
+
+

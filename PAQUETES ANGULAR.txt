@@ -1,0 +1,73 @@
+COMANDO PARA HABILITAR SCRIPTS WINDOWS: Set-ExecutionPolicy RemoteSigned
+
+COMANDO POR SI NO SE DESEA HABILITAR LOS SCRIPTS: powershell -ExecutionPolicy Bypass -Command 
+
+ng add @angular/material@15.2.7
+npm install sweetalert2@11.6.16
+npm install moment@2.29.4 --save
+npm i @angular/material-moment-adapter@15.2.7
+npm install chart.js@3.9.1
+npm i xlsx@0.18.5
+
+ENVIRONMENTS
+ng g environments
+
+INTERFACES
+ng generate interface Interfaces/ResponseApi
+ng generate interface Interfaces/Login
+ng generate interface Interfaces/Estado
+ng generate interface Interfaces/Usuario
+ng generate interface Interfaces/Sesion
+ng generate interface Interfaces/Rol
+ng generate interface Interfaces/Menu
+ng generate interface Interfaces/Categoria
+ng generate interface Interfaces/Marca
+ng generate interface Interfaces/Producto
+ng generate interface Interfaces/DetalleVenta
+ng generate interface Interfaces/Venta
+ng generate interface Interfaces/Reporte
+
+SERVICES
+ng generate service Services/Usuario
+ng generate service Services/Rol
+ng generate service Services/Menu
+ng generate service Services/Categoria
+ng generate service Services/Marca
+ng generate service Services/Producto
+ng generate service Services/Venta
+ng generate service Services/DashBoard
+
+
+MODULE
+ng generate module Reusable/Shared
+
+
+COMPONENTS
+ng generate component Components/Login
+ng generate component Components/Layout
+ng g m Components/Layout --routing
+
+ng g c Components/Layout/Pages/DashBoard
+ng g c Components/Layout/Pages/Usuario
+ng g c Components/Layout/Pages/Producto
+ng g c Components/Layout/Pages/Venta
+ng g c Components/Layout/Pages/HistorialVenta
+ng g c Components/Layout/Pages/Reporte
+
+SERVER
+
+ng serve --open
+ng g s Reusable/Utilidad
+
+
+
+
+
+
+
+
+
+
+
+
+

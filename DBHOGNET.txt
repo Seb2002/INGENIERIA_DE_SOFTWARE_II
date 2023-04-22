@@ -1,0 +1,151 @@
+
+
+
+CREATE DATABASE DBHOGNET
+
+GO
+
+USE DBHOGNET
+
+GO
+
+CREATE TABLE ROL(
+IdRol int  primary key identity(1,1),
+NombreRol varchar(20),
+FechaRegistro datetime default getdate()
+)
+
+go
+
+
+CREATE TABLE ESTADO (
+IdEstado int PRIMARY KEY IDENTITY(1,1),
+Activo bit default 1
+)
+
+go
+
+
+CREATE TABLE USUARIO(
+IdUsuario int  primary key identity(1,1),
+NombreCompleto varchar(50),
+Correo varchar(40),
+IdRol int references ROL(IdRol),
+Clave varchar(40),
+IdEstado INT REFERENCES ESTADO(IdEstado),
+FechaRegistro datetime default getdate()
+)
+
+go
+
+CREATE TABLE CATEGORIA(
+IdCategoria int  primary key identity(1,1),
+NombreCategoria varchar(50),
+IdEstado INT REFERENCES ESTADO(IdEstado),
+FechaRegistro datetime default getdate()
+)
+
+go
+
+
+CREATE TABLE MARCA(
+IdMarca int  primary key identity(1,1),
+NombreMarca varchar(50),
+IdEstado INT REFERENCES ESTADO(IdEstado),
+FechaRegistro datetime default getdate()
+)
+
+go
+
+
+
+CREATE TABLE PRODUCTO(
+IdProducto int  primary key identity(1,1),
+NombreProducto varchar(50),
+Descripcion varchar(300),
+IdCategoria int references CATEGORIA(IdCategoria),
+IdMarca int references MARCA(IdMarca),
+Stock int,
+Precio decimal(10,2) default 0,
+RutaImagen varchar(100),
+NombreImagen varchar(100),
+IdEstado INT REFERENCES ESTADO(IdEstado),
+FechaRegistro datetime default getdate()
+)
+
+go
+
+
+CREATE TABLE CARRITO (
+IdCarrito int  primary key identity(1,1),
+IdUsuario INT REFERENCES USUARIO(IdUsuario),
+IdProducto INT REFERENCES PRODUCTO(IdProducto),
+Cantidad INT
+)
+
+go
+
+CREATE TABLE VENTA (
+IdVenta int  primary key identity(1,1),
+NumeroDocumento varchar(15),
+TipoPago varchar(20),
+Total decimal(10,2) default 0,
+FechaVenta DATETIME DEFAULT getdate()
+)
+
+go
+
+CREATE TABLE DETALLE_VENTA (
+IdDetalleVenta int  primary key identity(1,1),
+IdVenta INT REFERENCES VENTA(IdVenta),
+IdProducto INT REFERENCES PRODUCTO(IdProducto),
+Cantidad INT,
+Precio DECIMAL(10, 2),
+Total DECIMAL(10, 2)
+)
+
+go
+
+CREATE TABLE NUMERO_DOCUMENTO(
+IdNumeroDocumento int  primary key identity(1,1),
+UltiNumero int not null,
+FechaRegistro DATETIME DEFAULT getdate()
+)
+
+go
+
+
+CREATE TABLE MENU(
+IdMenu int  primary key identity(1,1),
+NombreMenu varchar(40),
+Icono varchar(50),
+UrlMenu varchar(50)
+)
+
+go
+
+CREATE TABLE MENU_ROL(
+IdMenuRol int  primary key identity(1,1),
+IdMenu INT REFERENCES MENU(IdMenu),
+IdRol INT REFERENCES ROL(IdRol)
+)
+
+go
+
+
+CREATE TABLE AUDITORIA(
+IdAuditoria int  primary key identity(1,1),
+Usuario varchar(50),
+Accion varchar(50),
+Detalle varchar(100),
+FechaRegistro DATETIME DEFAULT getdate()
+)
+
+go
+
+
+
+
+
+
+

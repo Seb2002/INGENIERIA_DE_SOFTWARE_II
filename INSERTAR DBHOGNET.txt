@@ -1,0 +1,91 @@
+
+insert into ROL(NombreRol) values
+('Administrador'),
+('Usuario'),
+('Vendedor')
+
+go
+
+
+insert into USUARIO(NombreCompleto,Correo,IdRol,Clave,IdEstado) values 
+('Sebastian Mahecha','jusemabe@gmail.com',1,'admin',1)
+
+go
+
+INSERT INTO CATEGORIA(NombreCategoria,IdEstado) values
+('ELECTRODOMÉSTICOS',2),
+('TECNOLOGÍA',2),
+('ASEO',2),
+('MUEBLES',2),
+('VAJILLAS',2)
+
+go
+
+INSERT INTO MARCA(NombreMarca,IdEstado) values
+('LG',3),
+('SAMSUNG',3),
+('HACEB',3),
+('ASUS',3),
+('APPLE',3),
+('LENOVO',3),
+('SONY',3),
+('P&G',3),
+('TASK',3),
+('SUN',3),
+('IKEA',3),
+('H&M',3),
+('HOME DEPOT',3),
+('ALADDIN',3),
+('FIESTA',3),
+('LENOX',3)
+
+go
+
+
+insert into MENU(NombreMenu,Icono,UrlMenu) values
+('DashBoard','dashboard','/pages/dashboard'),
+('Usuarios','group','/pages/usuarios'),
+('Productos','collections_bookmark','/pages/productos'),
+('Venta','currency_exchange','/pages/venta'),
+('Historial Ventas','edit_note','/pages/historial_venta'),
+('Reportes','receipt','/pages/reportes')
+
+go
+
+--menus para administrador
+insert into MENU_ROL(IdMenu,IdRol) values
+(1,1),
+(2,1),
+(3,1),
+(4,1),
+(5,1),
+(6,1)
+
+go
+
+--menus para usuario
+insert into MENU_ROL(IdMenu,IdRol) values
+(4,2),
+(5,2)
+
+go
+
+--menus para vendedor
+insert into MENU_ROL(IdMenu,IdRol) values
+(3,3),
+(4,3),
+(5,3),
+(6,3)
+
+go
+
+insert into NUMERO_DOCUMENTO(UltiNumero,FechaRegistro) values
+(0,getdate())
+
+
+--INSERT PARA PRODUTO
+
+insert into PRODUCTO(NombreProducto,Descripcion,IdCategoria,IdMarca,Stock,Precio,RutaImagen,NombreImagen,IdEstado) values
+('PS4','PS4 NUEVO',2,7,3,650000,)
+
+'C:\Users\Jair Esteban Ortiz\Desktop\PROYECTO INGENIERIA DE SOFTWARE 21\FotosDelCarrito','1.jpg'

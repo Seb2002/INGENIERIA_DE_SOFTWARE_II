@@ -1,0 +1,9 @@
+Scaffold-DbContext "Server=DESKTOP-RT689CQ; DataBase=DBHOGNET; Trusted_Connection=True; TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer
+Server=DESKTOP-RT689CQ; Database=DBHOGNET; User Id=your_username; Password=your_password; Trusted_Connection=True; TrustServerCertificate=True;
+
+
+
+JWT AGRAGAR
+
+
+
